@@ -21,7 +21,13 @@ jobs:
 
       - name: Build Debug APK
         run: |
-         termux-app-master
+               - name: Build Debug APK
+        run: |
+          GRADLEW_PATH=$(find . -maxdepth 4 -name "gradlew" | head -n 1)
+          cd "$(dirname "$GRADLEW_PATH")"
+          chmod +x gradlew
+          ./gradlew assembleDebug --stacktrace
+          
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
 
