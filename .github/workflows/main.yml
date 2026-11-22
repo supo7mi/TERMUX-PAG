@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Debug APK
         run: |
-          cd termux-app-master
+         termux-app-master
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
 
